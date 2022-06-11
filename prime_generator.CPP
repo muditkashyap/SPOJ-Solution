@@ -16,6 +16,9 @@ long int prime_number_checker(long int num){
 	else if(num==2){
 		return true;
 	}
+	else if (num % 2 == 0){
+        return false;
+    }        
 	for(int i=2;i<sqrt(num)+1; i++ ){
 		if(num%i==0){
 			return false;
