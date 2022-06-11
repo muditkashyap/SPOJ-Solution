@@ -14,7 +14,8 @@ long int prime_number_checker(long int num){
 		return false;
 	}
 	else if(num==2){
-		return true;
+		cout<<num<<endl;                         
+		return 0;	
 	}
 	else if (num % 2 == 0){
         return false;
@@ -26,8 +27,10 @@ long int prime_number_checker(long int num){
 				return false;
 			}
 			seprator +=2;
-		}                         
-		return true;	
+		}
+	
+		cout<<num<<endl;                         
+		return 0;	
 	}
     
 }
@@ -41,12 +44,12 @@ int main(){
 		cin>>starting>>ending;
 		
 		for(starting;starting<=ending;starting++){
-			if(prime_number_checker(starting)){
-				cout<<starting<<endl;	
-			}                                        
+			prime_number_checker(starting);
 		}
 	}
 	
 	
 	return 0;
 }
+
+//2.36
