@@ -10,7 +10,7 @@ using namespace std;
 
 
 long int prime_number_checker(long int num){
-	if(num<=1){
+	if(num==1){
 		return false;
 	}
 	else if(num==2){
@@ -19,17 +19,12 @@ long int prime_number_checker(long int num){
 	else if (num % 2 == 0){
         return false;
     }        
-    else{
-    	int seprator = 3;
-		while(seprator <= sqrt(num)+1){
-			if(num%seprator==0){
-				return false;
-			}
-			seprator +=2;
-		}                         
-		return true;	
-	}
-    
+	for(int i=2;i<sqrt(num)+1; i ){
+		if(num%i==0){
+			return false;
+		}
+	}             
+	return true;
 }
 int main(){	
 	long int num,result,t;
@@ -38,10 +33,12 @@ int main(){
 	cin>>t;
 	
 	while(t--){
-		cin>>starting>>ending;
+		cin>>starting;
+		cin>>ending;
 		
 		for(starting;starting<=ending;starting++){
-			if(prime_number_checker(starting)){
+			result = prime_number_checker(starting);
+			if(result){
 				cout<<starting<<endl;	
 			}                                        
 		}
